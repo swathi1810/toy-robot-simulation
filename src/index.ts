@@ -3,8 +3,10 @@ import * as readline from 'readline';
 import {Direction} from "./enums/Direction";
 import {Robot} from "./models/Robot";
 
-
-
+/**
+ *Displays the welcome message with instructions on how to use the Toy Robot application.
+* This includes information on the available commands and how to run the program in different modes.
+*/
 export const displayWelcomeMessage = (): void => {
     console.log('TOY ROBOT 🤖');
     console.log('--------------');
@@ -27,6 +29,12 @@ export const displayWelcomeMessage = (): void => {
     );
 };
 
+/**
+ * Runs a predefined set of test commands on the given robot object.
+ * This function simulates several moves and actions of the robot and outputs the results.
+ *
+ * @param robot - The robot instance on which the commands will be executed.
+ */
 export const runTestData = (robot: Robot): void => {
     const testCommands = [
         'PLACE 0,0,NORTH',
@@ -51,6 +59,13 @@ export const runTestData = (robot: Robot): void => {
     });
 };
 
+/**
+ * Processes a single command issued to the robot.
+ * Based on the command type, the robot will perform actions like PLACE, MOVE, LEFT, RIGHT, or REPORT.
+ *
+ * @param command - The command string entered by the user or read from a file.
+ * @param robot - The robot instance on which the command will be executed.
+ */
 export const processCommand = (command: string, robot: Robot): void => {
     const parts = command.trim().split(' ');
     switch (parts[0]) {
@@ -76,7 +91,13 @@ export const processCommand = (command: string, robot: Robot): void => {
     }
 };
 
-// Option to process commands from a file
+/**
+ * Processes commands from a file.
+ * This function reads the commands from a file, then processes each command line-by-line.
+ *
+ * @param filePath - The path to the file containing the commands.
+ * @param robot - The robot instance on which the commands will be executed.
+ */
 export const processFileCommands = (filePath: string, robot: Robot): void => {
     const commands = fs.readFileSync(filePath, 'utf-8').split('\n');
     commands.forEach((command) => {
@@ -84,7 +105,12 @@ export const processFileCommands = (filePath: string, robot: Robot): void => {
     });
 };
 
-// Option to process commands from the console
+/**
+ * Processes commands entered in the console interactively.
+ * This function waits for user input in the console, processes each command, and continues to prompt until 'q' or 'exit' is entered.
+ *
+ * @param robot - The robot instance on which the commands will be executed.
+ */
 export const processConsoleCommands = (robot: Robot): void => {
     const rl = readline.createInterface({
         input: process.stdin,
@@ -104,7 +130,11 @@ export const processConsoleCommands = (robot: Robot): void => {
     });
 };
 
-// Main logic to choose between file or console input
+/**
+ * Main function to start the Toy Robot program.
+ * This function checks for command-line arguments to determine if the user wants to use a file, run tests, or display help.
+ * Based on the arguments, it either processes commands from a file, runs predefined test commands, or runs in console mode.
+ */
 const main = () => {
     const robot = new Robot();
     const args = process.argv.slice(2);
