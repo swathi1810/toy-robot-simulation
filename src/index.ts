@@ -19,9 +19,9 @@ export const displayWelcomeMessage = (): void => {
         `  - RIGHT       : Rotate the robot 90 degrees to the right (clockwise)\n` +
         `  - REPORT      : Output the robot's current position and facing direction\n\n` +
         `You can provide commands either through the console or from a file.\n` +
-        `  - 'npm start' : Starts the program in interactive console mode.\n` +
-        `  - 'npm start -- --file <filename>' : Run commands from a file.\n\n` +
-        `  - 'npm start -- --test' : Run predefined test commands.\n\n` +
+        `  - 'npm run start' : Starts the program in interactive console mode.\n` +
+        `  - 'npm run start -- --file <filename>' : Run commands from a file.\n\n` +
+        `  - 'npm run start -- --test' : Run predefined test commands.\n\n` +
         `Additional options:\n` +
         `  - '--help' : Displays this help message and instructions\n` +
         `  - 'q' or 'exit' : Exits the program\n\n` +
