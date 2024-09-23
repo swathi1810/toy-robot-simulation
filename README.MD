@@ -1,6 +1,6 @@
-# Toy Robot Simulation
+# Toy Robot Simulation 🤖
 
-This project is a **Node.js** console application that simulates a toy robot moving on a 5x5 grid. The robot can be placed, moved, rotated, and report its current position and orientation. Invalid commands, such as moving the robot off the grid, are ignored.
+This project is a console application that simulates a toy robot moving on a 5x5 grid. The robot can be placed, moved, rotated, and report its current position and orientation. Invalid commands, such as moving the robot off the grid, are ignored.
 
 ## Table of Contents
 
